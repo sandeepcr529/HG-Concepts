@@ -48,7 +48,7 @@ version controlled or 'tracked' by mercurial, and you have a set of files that y
 
 <h3>The Working Directory</h3>
 
-<p>The working directory is the directory that hold all the files of your project, tracked or not. We will come back to this later.</p>
+<p>The working directory is the directory that hold all the files of your project, tracked or not. </p>
 
 <h3>The Repository or Repo</h3>
 
@@ -57,19 +57,30 @@ You create a mercurial repository for your project by running the command from t
 
 <p><code>hg init</code></p>
 
-<p>This creates the .hg directory. For all intents and purposes, this IS the repository. After a while it will contain all the history of your project(tracked files) from the beginning of time. You can copy this directory to a different location and you will have a repository there. </p>
+<p>This creates the .hg directory. For all intents and purposes, this IS the repository. After a while it will contain all the history of your project(tracked files) from the beginning of time. You can copy this directory to a different location and you will have a repository there.</p>
 
 <h3>The Changeset or Revision</h3>
 
-<p>In mercurial, the history of a project is recorded as a series of changesets or revisions. A revision  can be identified by a changeset id <strong>or</strong> revision number. A changeset id is hash like 'ad78e3810360', but a revision number is a simple number like 100. The revision number of first commit will be 0, then next one will be 1 and so on. You can refer to a revision by using its changeset id or revision number. Will come back to this later.</p>
-
 <p>A revision is added to the history when you do a commit operation. <strong>When you do a commit operation, the state of all tracked files are recorded and stored in the newly created revision.</strong> </p>
+
+<p>In mercurial, the history of a project is recorded as a series of such revisions. A revision  can be identified by a changeset id or revision number. A changeset id is hash like 'ad78e3810360', but a revision number is a simple number like 100. The revision number of first commit will be 0, then next one will be 1 and so on. You can refer to a revision by using its changeset id or revision number. It is easier to refer to a revision using its revision number, but in some situtations you will need the changeset id to uniquely identify the revision. We will come to this later. </p>
 
 <h3>The Parent</h3>
 
-<p>When you update the working directory to a revision <code>x</code>, all the tracked files will be updated to the exact same state, when the commit <code>x</code> was made. Then we say that the working directory is based on the revision <code>x</code>. In other words, the parent of working directory is revision <code>x</code>. </p>
+<p><strong>When you update the working directory to a revision</strong> <code>x</code>, <strong>all the tracked files will be updated to the exact same state, when the commit</strong> <code>x</code> <strong>was made. Then we say that the working directory is based on the revision</strong> <code>x</code>. <strong>In other words, revision</strong> <code>x</code> <strong>is the parent of working directory.</strong></p>
 
 <p>This also happens when you make a commit. Suppose the current parent of the working directory is <code>x</code>. Suppose you edit some files and did a commit and the new resulting revision be <code>y</code>. Then <code>y</code> will be added to the history as a child of <code>x</code>. And the current parent of working directory will be set to <code>y</code>.</p>
+
+<h3>Summary</h3>
+
+<ul>
+<li>Mercurial repository consist of a .hg directory in the root folder of the project</li>
+<li>History is recorded as a series of revisions in the .hg folder.</li>
+<li>At any point, the working directory can contain only the contents of a single revision. This revision is called the <strong>parent</strong> of the working directory.</li>
+<li>When you make a commit, you add a new revision as a child to the parent of the working directory. After this, the newly created revision is set as the parent of the working directory.</li>
+<li>When you update to a revision <code>x</code>, the contents of the working directory are set to the state when that revision <code>x</code> was made and parent of the working directory is set as <code>x</code>
+</li>
+</ul>
       </section>
     </div>
 
