@@ -39,7 +39,7 @@
 
 <p>Any version control system will have three main entities. The tracked files, the working directory and the repository.</p>
 
-<h2>The Tracked files</h2>
+<h2>The Tracked Files</h2>
 
 <p>A code version system is a system to manage the source code of your project. But your project will almost always contains files that are not code/text. This includes binary files like images, videos, user uploaded files. There will be log files that does not make much sens to be version controlled. These files can be excluded from version control. So you have a set of files that you want to be 
 version controlled or 'tracked' by mercurial, and you have a set of files that you don't want to track.</p>
@@ -52,7 +52,12 @@ version controlled or 'tracked' by mercurial, and you have a set of files that y
 
 <h2>The Repository or Repo</h2>
 
-<p>A mercurial repository takes the form of a directory named .hg in the root of your working directory. For all intents and purposes, this IS the repository. It contains all the history of your project(tracked files) from the beginning of time. You can copy this directory to a different location and you will have a repository there. </p>
+<p>A mercurial repository takes the form of a directory named .hg in the root of your working directory. 
+You create a mercurial repository for your project by running the command from the root of your project folder.</p>
+
+<p><code>hg init</code></p>
+
+<p>This creates the .hg directory. For all intents and purposes, this IS the repository. After a while it will contain all the history of your project(tracked files) from the beginning of time. You can copy this directory to a different location and you will have a repository there. </p>
       </section>
     </div>
 
