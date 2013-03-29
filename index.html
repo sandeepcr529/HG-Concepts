@@ -63,11 +63,11 @@ You create a mercurial repository for your project by running the command from t
 
 <p>A revision is added to the history when you do a commit operation. <strong>When you do a commit operation, the state of all tracked files are recorded and stored in the newly created revision.</strong> </p>
 
-<p>In mercurial, the history of a project is recorded as a series of such revisions. A revision  can be identified by a changeset id or revision number. A changeset id is hash like 'ad78e3810360', but a revision number is a simple number like 100. The revision number of first commit will be 0, then next one will be 1 and so on. You can refer to a revision by using its changeset id or revision number. It is easier to refer to a revision using its revision number, but in some situtations you will need the changeset id to uniquely identify the revision. We will come to this later. </p>
+<p>In mercurial, the history of a project is recorded as a series of such revisions. A revision  can be identified by a <code>changeset id</code> or <code>revision number</code>. A changeset id is hash like 'ad78e3810360', but a revision number is a simple number like 100. The revision number of first commit will be 0, then next one will be 1 and so on. You can refer to a revision by using its changeset id or revision number. It is easier to refer to a revision using its revision number, but in some situtations you will need the changeset id to uniquely identify the revision. We will come to this later. </p>
 
 <h3>The Parent</h3>
 
-<p><strong>When you update the working directory to a revision</strong> <code>x</code>, <strong>all the tracked files will be updated to the exact same state, when the commit</strong> <code>x</code> <strong>was made. Then we say that the working directory is based on the revision</strong> <code>x</code>. <strong>In other words, revision</strong> <code>x</code> <strong>is the parent of working directory.</strong></p>
+<p><strong>When you update the working directory to a revision</strong> <code>x</code>, <strong>all the tracked files will be updated to the exact same state they were, when the commit</strong> <code>x</code> <strong>was made. At this point, we say that the working directory is based on the revision</strong> <code>x</code>. <strong>In other words, revision</strong> <code>x</code> <strong>is the parent of working directory.</strong></p>
 
 <p>This also happens when you make a commit. Suppose the current parent of the working directory is <code>x</code>. Suppose you edit some files and did a commit and the new resulting revision be <code>y</code>. Then <code>y</code> will be added to the history as a child of <code>x</code>. And the current parent of working directory will be set to <code>y</code>.</p>
 
