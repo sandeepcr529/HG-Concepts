@@ -35,7 +35,13 @@
 
 <h3>Command syntax</h3>
 
-<p>All mercurial start with <code>hg</code> and have syntax <code>hg <i>command</i></code></p>
+<p>All mercurial commands start with <code>hg</code> and have syntax <code>hg command arguments...</code></p>
+<h3>Creating a Repository</h3>
+<p>The command <code>hg init</code> creates a blank repo at the current directory. This means, if you are in directory /home/abc, then running hg init will create a directory </code>/home/abc/.hg</code>. At the beginning the repo will not contin any files, even though /home/abc may contain any files. 
+
+<h3>Adding files to Repository</h3>
+<p>The command <code>hg add</code> is used to add files to the repository.</p>
+<p>If no file name is provided, then this will add ALL the files that are present in the current directory. A file is added to the repository means that file becomes a tracked file.</p>
 
 <p>Any version control system will have three main entities. The tracked files, the working directory and the repository.</p>
 
