@@ -62,14 +62,15 @@
 <p>
 	<code>hg revert -a -r 10</code> reverts all the tracked files in your working directory to the state they were when you made the 10th commit. The parent of the working directory is not changed. If the parent of the working directory was 20, then after reverting to 10th revision the parent of the working directory is still 20th revision. If you make a commit now, then the new revision will be added as a child of 20th revision.
 </p>
-      </section>
-    </div>
 <h4>
 	Update
 </h4>
 <p>
 	<code>hg update -r 10</code> reverts all the tracked files in your working directory to the state they were when you made the 10th commit and <b>changes the parent of the working directory to 10th revision</b>. If the parent of the working directory was 20, then after updating to 10th revision the parent of the working directory is 20th revision. If you make a commit now, then the new revision will be added as a child of 10th revision. If you do this, you will create an anonymous branch.
 </p>
+      </section>
+    </div>
+
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
