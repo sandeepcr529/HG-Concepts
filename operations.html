@@ -44,11 +44,32 @@
 <p>If no file name is provided, then this will add ALL the files that are present in the current directory. A file is added to the repository means that file becomes a tracked file.</p>
 
 <h3>Commiting</h3>
-<p>Commit operation saves the state of the tracked files in the repo as a new changeset. The command for this operation is, not surprisingly, <code>hg commit -u username -m commit-message</code>The username and message can be any string. If they contain spaces, then they have to be quoted like <code>hg commit -u sandeep -m "added missing argument"</code></p>
+<p>Commit operation saves the state of the tracked files in the repo as a new changeset. The command for this operation is, <code>hg commit -u username -m commit-message</code>The username and message can be any string. If they contain spaces, then they have to be quoted like <code>hg commit -u sandeep -m "added missing argument"</code></p>
 
+<h3>Going back in history</h3>
+<p>Suppose you have just made your 20th commit and for whatever reason you want to know what your project looked like when you made the 10th commit. This can be done in 2 ways</p>
+<ul>
+	<li>
+		By Reverting
+	</li>
+	<li>
+		By Updating
+	</li>
+</ul>
+<h4>
+	Revert
+</h4>
+<p>
+	<code>hg revert -a -r 10</code> reverts all the tracked files in your working directory to the state they were when you made the 10th commit. The parent of the working directory is not changed. If the parent of the working directory was 20, then after reverting to 10th revision the parent of the working directory is still 20th revision. If you make a commit now, then the new revision will be added as a child of 20th revision.
+</p>
       </section>
     </div>
-
+<h4>
+	Update
+</h4>
+<p>
+	<code>hg update -r 10</code> reverts all the tracked files in your working directory to the state they were when you made the 10th commit and <b>changes the parent of the working directory to 10th revision</b>. If the parent of the working directory was 20, then after updating to 10th revision the parent of the working directory is 20th revision. If you make a commit now, then the new revision will be added as a child of 10th revision. If you do this, you will create an anonymous branch.
+</p>
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
